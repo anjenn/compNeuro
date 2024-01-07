@@ -13,14 +13,14 @@ s\s; % reverse division => inv(s) * s
 % where coefficient matrix A == [a b ; c d] and X == [x;y] and B == [p;q]
 
 t = 0:.3:10; % range from 0 to 10 with steps of 0.3
-y = sin(t)
-plot(t, y)
+y = sin(t);
+% plot(t, y);
 [x,y] = meshgrid(-2:.2:2, -2:.2:2);
 z = x .* exp(-x.^2 - y.^2);
-surf(x,y,z)
+% surf(x,y,z);
 
-x = 1:10 % 1 2 3 4 5 ,....creates a unit-spaced vector x with elements [j,j+1,j+2,...,j+m]
-x = 1:2:10 % 1 3 5 ... j:i:k creates a regularly-spaced vector x using i as the increment between elements.
+x = 1:10; % 1 2 3 4 5 ,....creates a unit-spaced vector x with elements [j,j+1,j+2,...,j+m]
+x = 1:2:10; % 1 3 5 ... j:i:k creates a regularly-spaced vector x using i as the increment between elements.
 
 % A(:,n) is the nth column of matrix A.
 % A(m,:) is the mth row of matrix A.
@@ -39,3 +39,20 @@ x = 1:2:10 % 1 3 5 ... j:i:k creates a regularly-spaced vector x using i as the 
 % A(:,1:3) % spans from column 1 to 3
 % A(1:3,:) % spans from row 1 to 3
 % A(:,:) % returns original matrix
+
+% .* operator multiplies each element in the same location in 2 matrices
+
+
+%%%%%%%%%%%%%%%
+
+B = [2,2; 3,3; 4,4];
+d = [1,2,3];
+f = [8;9];
+repmat = repmat(f, 2, 2) % for repmat(A, m, n)
+% m is the number of times to repeat A in the row direction.
+% n is the number of times to repeat A in the column direction.
+
+q =[1 1 2 2 1 3 2 2 3 1]
+q == 3 % executes bitwise operation that performs 3&&x on each bit
+find(q==3, 1) % returns the index that first encounters 3
+q(q<3)=0 % returns array with everything below 3 nulled
